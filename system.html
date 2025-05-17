@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="logo.png" alt="Kali Del Rosario" class="logo-img">
+            </div>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="nav-link">ABOUT</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#projects" class="nav-link">PROJECTS</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#skills" class="nav-link">SKILLS</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#education" class="nav-link">EDUCATION</a>
+                </li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home-section">
+    <div class="home-content">
+        <p class="home-greeting">HELLO!</p>
+        <h1 class="home-name">I Am Roz <span class="cursor">|</span></h1>
+        <p class="home-description">
+            I'm a 1st year IT Student in Global Reciprocal Colleges. I want to work in field of Cyber Security someday...
+        </p>
+        <div class="home-buttons">
+            <a href="#portfolio" class="btn btn-primary">View Work</a>
+        </div>
+    </div>
+    <div class="home-image-container">
+        <img src="ganda2.png" alt="Tasnia Farin" class="home-image">
+    </div>
+</section>
+
+<section id="about" class="about-section-new">
+    <div class="about-card">
+        <div class="about-image-wrapper">
+            <img src="ganda.jpg" alt="Your Name - Silhouette" class="about-profile-image">
+        </div>
+        <div class="about-content-right">
+            <h2 class="about-title">ABOUT ME</h2>
+            <p class="about-subtitle">ROZ LAGABAN - BSIT STUDENT</p>
+            <p class="about-description">
+                I started coding when I was a grade 11 student, when I chose the ICT strand. I was introduced with JAVA and TurboC++, but when the quarter of the school year started that is when we started to use Visual Basic and HTML & CSS. For our projects I created Attendance Monitoring System using Visual Basic. In my 12th Grade we learned about animation using Adobe Flash and photo manipulation using Adobe Photoshop. For my research project I created a Library management System using Visual Basic and used Microsoft Access as my Database.
+            </p>
+            <div class="about-social-icons">
+                <a href="https://www.facebook.com/roz.lagaban" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/rozlagaban7?igsh=aGpiZGJtOHR4MHlj" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://mail.google.com." class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects-section">
+    <div class="projects-header">
+        <span class="nav-arrow left-arrow" style="visibility: hidden;">&larr;</span> <div class="header-content">
+            <h2 class="projects-title">My Projects</h2>
+            <p class="projects-description">
+                These are the projects I made for the past 2 years of studying Information  and Communication Technology (ICT).
+            </p>
+        </div>
+        <span class="nav-arrow right-arrow" style="visibility: hidden;">&rarr;</span> </div>
+
+    <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="project-carousel-content">
+                    <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/428/979/datas/original.PNG" class="d-block w-100 project-carousel-image" alt="Project 1 Main Image">
+                    <div class="carousel-caption d-none d-md-block project-carousel-caption">
+                        <h5 class="carousel-project-name">Project 1: Attendance Monitoring System</h5>
+                        <p class="carousel-project-description">Developed an Attendance Monitoring System that helps to easily track the attendance of students of one section.</p>
+                        <a href="ams.html" class="btn-view-system-carousel">View System</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="project-carousel-content">
+                    <img src="https://files.codingninjas.in/article_images/custom-upload-1681454804.webp" class="d-block w-100 project-carousel-image" alt="Project 2 Main Image">
+                    <div class="carousel-caption d-none d-md-block project-carousel-caption">
+                        <h5 class="carousel-project-name">Project 2: Library Management System</h5>
+                        <p class="carousel-project-description">A system that helps librarian in managing library books and search e-books instead of searching manually in the library.</p>
+                        <a href="lms.html" class="btn-view-system-carousel">View System</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="project-carousel-content">
+                    <img src="w1.jpg" class="d-block w-100 project-carousel-image" alt="Project 3 Main Image">
+                    <div class="carousel-caption d-none d-md-block project-carousel-caption">
+                        <h5 class="carousel-project-name">Project 3: Church Website</h5>
+                        <p class="carousel-project-description">Designed and developed a website for our Church.</p>
+                        <a href="church.html" class="btn-view-system-carousel">View System</a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="carousel-item">
+                <div class="project-carousel-content">
+                    <img src="https://www.onecalendar.nl/images/onecalendar.jpg" class="d-block w-100 project-carousel-image" alt="Project 3 Main Image">
+                    <div class="carousel-caption d-none d-md-block project-carousel-caption">
+                        <h5 class="carousel-project-name">Project 4: Calendar</h5>
+                        <p class="carousel-project-description">Designed a Calendar for the year of 2024.</p>
+                        <a href="calendar.html" class="btn-view-system-carousel">View System</a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </section>
+
+<section id="skills" class="skills-section-categorized">
+    <div class="skills-header">
+        <h2 class="skills-title">My Skills</h2>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="skills-category">
+        <h3 class="category-heading">Technical Skills:</h3>
+        <div class="skills-list">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">VisualBasic</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">Turbo C++</span>
+            <span class="skill-pill">C#</span>
+        </div>
+    </div>
+
+    <div class="skills-category">
+        <h3 class="category-heading">Tools:</h3>
+        <div class="skills-list">
+            <span class="skill-pill">Photoshop</span>
+            <span class="skill-pill">Bootstrap</span>
+            <span class="skill-pill">Figma</span>
+        </div>
+    </div>
+
+    <div class="skills-category">
+        <h3 class="category-heading">Databases:</h3>
+        <div class="skills-list">
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">Microsoft Access</span>
+        </div>
+    </div>
+
+    <div class="skills-category">
+        <h3 class="category-heading">Soft Skills:</h3>
+        <div class="skills-list">
+            <span class="skill-pill">Communication</span>
+            <span class="skill-pill">Teamwork</span>
+            <span class="skill-pill">Problem-Solving</span>
+            <span class="skill-pill">Adaptability</span>
+            <span class="skill-pill">Arranger</span>
+
+        </div>
+    </div>
+
+    </section>
+
+    <section id="education" class="education-section">
+    <div class="education-header">
+        <h2 class="education-title">Education</h2>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="education-timeline">
+
+        <div class="education-entry">
+            <div class="education-dot"></div>
+            <div class="education-content">
+                <h3 class="education-degree"> Elementary </h3>
+                <p class="education-institution">Tanza Elementary School, Navotas City</p>
+                <p class="education-dates"> 2011 - 2018</p>
+                <ul class="education-highlights">
+                    <li>Graduated with Honors</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="education-entry">
+            <div class="education-dot"></div>
+            <div class="education-content">
+                <h3 class="education-degree"> Junior Highschool </h3>
+                <p class="education-institution">Tanza National Highschool, Navotas City</p>
+                <p class="education-dates"> 2018 -2022</p>
+                <ul class="education-highlights">
+                    <li>Graduated with Honors</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="education-entry">
+            <div class="education-dot"></div>
+            <div class="education-content">
+                <h3 class="education-degree"> Senior High School </h3>
+                <p class="education-institution">Arellano University Elisa Esguerra Campus, Malabon City</p>
+                <p class="education-dates"> 2022 - 2024</p>
+                <ul class="education-highlights">
+                    <li>Graduated with Honors</li>
+                    <li>ICT Club Assistant Secretary</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="education-entry">
+            <div class="education-dot"></div>
+            <div class="education-content">
+                <h3 class="education-degree"> College </h3>
+                <p class="education-institution">Global Reciprocal Colleges, Caloocan City</p>
+                <p class="education-dates"> 2024 - current-year</p>
+                <ul class="education-highlights">
+                </ul>
+            </div>
+        </div>
+
+        </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="contact-header">
+        <h2 class="contact-title">HAVE SOME QUESTIONS?</h2>
+        <div class="contact-info-line">
+            <i class="fas fa-map-marker-alt"></i> Philippines <span class="separator">|</span>
+            <i class="fas fa-calendar-alt"></i> Available for projects
+        </div>
+    </div>
+
+    <div class="contact-content-wrapper">
+        <div class="contact-left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+</svg>
+            </div>
+
+        <div class="contact-right">
+            <form class="contact-form">
+                <div class="form-row">
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    <span class="input-separator"></span>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" id="email" name="email" placeholder="What's your email?" required>
+                </div>
+                <div class="form-row">
+                    <textarea id="questions" name="questions" rows="5" placeholder="Your questions..." required></textarea>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="btn-send-message">SEND MESSAGE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

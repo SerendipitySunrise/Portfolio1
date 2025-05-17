@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Church Photos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Body Styles  --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f7f3ed;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Gallery Page Specific Styling (For church.html) --- */
+
+        .gallery-header {
+            background-color: #3e312f;
+            color: #f7f3ed;
+            padding: 25px 5%;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .gallery-header .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .gallery-title {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #f7f3ed;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            padding: 8px 15px;
+            border: 2px solid #a0522d;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #a0522d;
+            color: #ffffff;
+            transform: translateY(-50%) translateX(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-main-content {
+            background-color: #f7f3ed;
+            padding: 60px 2%;
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-grid-container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #eeeeee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-footer {
+            background-color: #3e312f;
+            color: #f7f3ed;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Adjustments for Gallery Page */
+        @media (max-width: 992px) {
+            .gallery-title {
+                font-size: 2.2em;
+            }
+
+            .back-button {
+                font-size: 1em;
+                padding: 6px 12px;
+                left: 2%;
+            }
+
+            .photo-grid-container {
+                padding: 15px;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .grid-item img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-header {
+                flex-direction: column;
+                padding: 15px 3%;
+            }
+
+            .gallery-header .container {
+                flex-direction: column;
+            }
+
+            .back-button {
+                position: static;
+                transform: none;
+                margin-bottom: 15px;
+                width: auto;
+            }
+
+            .gallery-title {
+                font-size: 1.8em;
+            }
+
+            .gallery-main-content {
+                padding: 40px 2%;
+            }
+
+            .photo-grid-container {
+                padding: 10px;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 10px;
+            }
+
+            .grid-item img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-main-content {
+                padding: 30px 1%;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .grid-item img {
+                height: 200px;
+            }
+
+            .gallery-title {
+                font-size: 1.5em;
+            }
+        }
+
+        /* --- Lightbox Styles --- */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        #lightbox .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #ffffff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        #lightbox .close-button:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header class="gallery-header">
+        <div class="container">
+            <a href="system.html" class="back-button">&larr; Back to Portfolio</a>
+            <h1 class="gallery-title">Church Website</h1>
+        </div>
+    </header>
+
+    <main class="gallery-main-content">
+        <div class="photo-grid-container">
+            <div class="photo-grid">
+                <div class="grid-item" data-image="w1.jpg"><img src="w1.jpg" alt="Project Church Photo 1"></div>
+                <div class="grid-item" data-image="w2.jpg"><img src="w2.jpg" alt="Project Church Photo 2"></div>
+                <div class="grid-item" data-image="w3.jpg"><img src="w3.jpg" alt="Project Church Photo 3"></div>
+            </div>
+        </div>
+        <div id="lightbox">
+            <span class="close-button">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </main>
+
+    <footer class="gallery-footer">
+        <p>&copy; <span id="current-year"></span> Roz Lagaban. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const gridItems = document.querySelectorAll('.grid-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeButton = document.querySelector('#lightbox .close-button');
+
+        gridItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imageSrc = item.getAttribute('data-image');
+                lightboxImg.src = imageSrc;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButton.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
